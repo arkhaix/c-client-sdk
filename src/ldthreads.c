@@ -514,7 +514,9 @@ LDi_bgfeaturestreamer(void *const v)
             LDSSEParserInitialize(&parser, LDi_onEvent, (void *)client);
 
             /* this won't return until it disconnects */
+            LD_LOG(LD_LOG_INFO, "entering LDi_readstream");
             LDi_readstream(client, &response, &parser, LDi_updatehandle);
+            LD_LOG_1(LD_LOG_INFO, "LDi_readstream exited with response=%d", (int)response);
 
             LDSSEParserDestroy(&parser);
         }
