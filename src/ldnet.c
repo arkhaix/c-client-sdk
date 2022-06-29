@@ -522,7 +522,7 @@ LDi_readstream(
 
     LD_LOG_1(LD_LOG_INFO, "connecting to stream %s", url);
     res = curl_easy_perform(curl);
-    LD_LOG_1(LD_LOG_INFO, "curl_easy_perform returned %d", (int)res)
+    LD_LOG_1(LD_LOG_INFO, "curl_easy_perform returned %d", (int)res);
 
     /* CURL_LAST = 99 so the union of curl responses + http response codes should have no overlap. */
     if (res == CURLE_OK) {
